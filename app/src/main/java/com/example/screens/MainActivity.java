@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 intent.putExtra("text", "Ronya Rövardotter:\nBlodet ska rinna!"); // Optional
-                intent.putExtra("number", 10); // Optional
+                intent.putExtra("number", 888); // Optional
                 startActivity(intent);
             }
         });
