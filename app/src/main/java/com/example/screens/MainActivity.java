@@ -20,9 +20,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                intent.putExtra("text", "Ronya Rövardotter:\nBlodet ska rinna!"); // Optional
+                intent.putExtra("number", 10); // Optional
                 startActivity(intent);
             }
         });
+
+
 
 
 
