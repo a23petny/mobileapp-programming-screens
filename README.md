@@ -34,7 +34,7 @@ function errorCallback(error) {
 Bilder läggs i samma mapp som markdown-filen.
 
 ![](android1.png)
-![](android2.png)
+![](android11.png)
 Läs gärna:
 
 - Boulos, M.N.K., Warren, J., Gong, J. & Yue, P. (2010) Web GIS in practice VIII: HTML5 and the canvas element for interactive online mapping. International journal of health geographics 9, 14. Shin, Y. &
