@@ -6,31 +6,44 @@
 _Du kan ta bort all text som finns sedan tidigare_.
 
 ## Följande grundsyn gäller dugga-svar:
-- test
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
 
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
-
+- In this project i started by creating an adisional main activity, then not in cronical orrder i find the xml button by passing its ID where on its clikclistnern, i instantiate a new intent, that sends the user from ma (current) to ma2 when ever the user click on the button. i also belive that i send a bundle with the lable "text" and "number"
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
-```
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                intent.putExtra("text", "Ronya Rövardotter:\nBlodet ska rinna!"); // Optional
+                intent.putExtra("number", 888); // Optional
+                startActivity(intent);
+            }
+        });
+```
+- that i latter use to re name both of the text views as seen bellow, where i first find them, and then a set the text to that i expect.
+```
+        Bundle extras = getIntent().getExtras();
+        String texty = null;
+        int number = 0;
+        if (extras != null) {
+            texty = extras.getString("text");
+            number = extras.getInt("number");
+            // Do something with the name and number
+        }
+
+        TextView textView = findViewById(R.id.text);
+        TextView textView1 = findViewById(R.id.text1);
+        textView.setText(texty);
+        textView1.setText("" + number);
+```
+- I have also made the MainActivity2 a child of MainActivity
+```
+        <activity
+            android:name=".MainActivity2"
+            android:parentActivityName=".MainActivity"
+            ...
+```
 Bilder läggs i samma mapp som markdown-filen.
 
 ![](android1.png)
